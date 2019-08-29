@@ -10,13 +10,15 @@ import java.util.regex.*;
  * A Java implementation of Norvig's spell checker. Norvig's paper and Python spell
  * checker can be found at: http://www.norvig.com/spell-correct.html
  * This Java version from: http://raelcunha.com/spell-correct.php
- *
+ * <p>
  * The goal of the author was to write a short spell checker. On the web page
  * (without comments) it was 35 non-blank lines.
- *
+ * <p>
  * Comments and modifications by Scot Drysdale
+ *
  * @author Rael Cunha
  */
+
 public class SpellCorrector {
 
     private HashMap<String, Integer> nWords;
@@ -112,7 +114,7 @@ public class SpellCorrector {
         // If found something edit distance 2 return the most frequent word.
         // If not return the word with a "?" prepended.  (Original just returned the word.)
         return candidates.size() > 0 ?
-                candidates.get(Collections.max(candidates.keySet())) : "?" + word;
+                candidates.get(Collections.max(candidates.keySet())) : word;
     }
 
     /**
@@ -127,21 +129,21 @@ public class SpellCorrector {
     if(args.length > 0) System.out.println((new Spelling("big.txt")).correct(args[0]));
   }
 */
-    public static void main(String[] args) throws IOException {
-        String str=null;
+    public static String resultString() throws IOException {
+        String str = "";
         RemoveSpecialCharacter rm = new RemoveSpecialCharacter();
-        SpellCorrector corrector = new SpellCorrector("words.txt");
+        SpellCorrector corrector = new SpellCorrector("dictionary.txt");
         List<String> list = new ArrayList<>();
         list.addAll(rm.specialCharacterRemover());
         Iterator iterator = list.iterator();
         while (iterator.hasNext()) {
             String word = (iterator.next() + " ");
-               // System.out.println(" is corrected to " + corrector.correct(word));
-                str=str+" "+corrector.correct(word);
-            }
-        System.out.println(str);
+            // System.out.println(" is corrected to " + corrector.correct(word));
+            str = str + " " + corrector.correct(word);
         }
+        return str;
     }
+}
 
 
 

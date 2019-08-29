@@ -9,15 +9,16 @@ import org.springframework.context.annotation.Import;
 
 import java.io.IOException;
 
-@SpringBootApplication
+
 @ComponentScan(basePackages = "com.stackroute.succour")
 @Import({RemoveSpecialCharacter.class, SpellCorrector.class})
+@SpringBootApplication
 public class TextCleansingApplication {
 	public static void main(String[] args) throws IOException {
 
-		//SpringApplication.run(TextCleansingApplication.class, args);
-		//System.out.println(RemoveSpecialCharacter.specialCharacterRemover());
-	//System.out.println(SpellCorrector.run());
+	//	SpringApplication.run(TextCleansingApplication.class, args);
+
+	System.out.println(SpellCorrector.resultString());
 	}
 }
 
