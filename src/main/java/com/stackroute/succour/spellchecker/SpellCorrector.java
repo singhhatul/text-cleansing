@@ -1,7 +1,6 @@
 package com.stackroute.succour.spellchecker;
 
 import com.stackroute.succour.nonalphanumericremover.RemoveSpecialCharacter;
-
 import java.io.*;
 import java.util.*;
 import java.util.regex.*;
@@ -30,6 +29,7 @@ public class SpellCorrector {
      * @param file the text to process
      * @throws IOException
      */
+
     public SpellCorrector(String file) throws IOException {
         nWords = new HashMap<String, Integer>();
         BufferedReader in = new BufferedReader(new FileReader(file));
@@ -129,7 +129,8 @@ public class SpellCorrector {
     if(args.length > 0) System.out.println((new Spelling("big.txt")).correct(args[0]));
   }
 */
-    public static String resultString() throws IOException {
+
+public static String resultString() throws IOException {
         String str = "";
         RemoveSpecialCharacter rm = new RemoveSpecialCharacter();
         SpellCorrector corrector = new SpellCorrector("dictionary.txt");

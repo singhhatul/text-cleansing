@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 public class RemoveSpecialCharacter {
     public List<String> specialCharacterRemover() throws IOException {
       List<String[]> list=new ArrayList<>();
-        InputStream is = new FileInputStream("/home/cgi/IdeaProjects/Currently Working/text-cleansing/test.txt");
+        InputStream is = new FileInputStream("test.txt");
         BufferedReader buf = new BufferedReader(new InputStreamReader(is));
         String line = buf.readLine();
         StringBuilder sb = new StringBuilder();
